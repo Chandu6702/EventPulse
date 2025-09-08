@@ -1,0 +1,18 @@
+# Node
+node_modules/
+npm-debug.log
+.env
+
+# React
+frontend/node_modules/
+frontend/dist/
+
+# Python
+__pycache__/
+*.pyc
+analytics/env/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
