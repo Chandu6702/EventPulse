@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
-import User from "../../models/User.schema.js";
-import Session from "../../models/Session.schema.js";
-import { signJWT, signJWTRefresh } from "../../utils/genarateToken.js";
+import User from "../models/User.schema.js";
+import Session from "../models/Session.schema.js";
+import { signJWT, signJWTRefresh } from "../utils/genarateToken.js";
 
 export const login = async (req, res) => {
   const { email, password } = req.body;
@@ -43,7 +43,12 @@ export const login = async (req, res) => {
       expires: new Date(Date.now() + 15 * 86400 * 1000),
     });
 
-    res.status(200).json({ accessToken });
+    res.status(200).json({
+      accessToken,
+      user: {
+        name: user.name,
+      },
+    });
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({ message: "Internal server error" });

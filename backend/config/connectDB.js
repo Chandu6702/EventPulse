@@ -1,8 +1,8 @@
-import { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 
 const connectDB = async () => {
   try {
-    await Mongoose.connect(process.env.MONGODB_URI, {
+    await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

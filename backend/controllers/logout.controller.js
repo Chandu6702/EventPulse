@@ -1,4 +1,4 @@
-import Session from "../../models/Session.schema.js";
+import Session from "../models/Session.schema.js";
 
 export const logout = async (req, res) => {
   try {
